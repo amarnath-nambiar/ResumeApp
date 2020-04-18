@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  college: MyString
+  course: MyString
+  join_date: 2020-04-18
+  completion_date: 2020-04-18
+  aggregate: 1.5
+
+two:
+  college: MyString
+  course: MyString
+  join_date: 2020-04-18
+  completion_date: 2020-04-18
+  aggregate: 1.5

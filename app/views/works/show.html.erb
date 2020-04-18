@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @work.company %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @work.role %>
+</p>
+
+<p>
+  <strong>Join date:</strong>
+  <%= @work.join_date %>
+</p>
+
+<p>
+  <strong>Completion date:</strong>
+  <%= @work.completion_date %>
+</p>
+
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Back', works_path %>

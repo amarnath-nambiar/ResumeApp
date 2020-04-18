@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  role: MyString
+  join_date: 2020-04-18
+  completion_date: 2020-04-18
+
+two:
+  company: MyString
+  role: MyString
+  join_date: 2020-04-18
+  completion_date: 2020-04-18

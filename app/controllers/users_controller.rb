@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  require 'ResumeFactory/generate_employee_resume'
+  require 'ResumeFactory/resume_builder'
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -10,6 +13,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @educations = @user.educations
+    @works  = @user.works if @user.is_a? Employee
   end
 
   # GET /users/new
@@ -68,8 +73,8 @@ class UsersController < ApplicationController
 
   def generate_resume
     @user = User.find(params[:id])
-    @resume_hash = GenerateResume.new(@user)
-    render json: {}
+    @resume_hash = ResumeBuilder.new(@user).genarate_resume
+    render json: @resume_hash.to_json
   end
 
   private

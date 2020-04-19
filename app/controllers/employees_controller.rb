@@ -2,6 +2,10 @@ class EmployeesController < ApplicationController
   def index
   end
 
+  def show
+    redirect_to :controller => 'users', :action => 'show'
+  end
+
   def new
   end
 

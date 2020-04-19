@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :works
   resources :educations
-  resources :users
+  resources :users do
+    get "generate_resume", :on => :member
+  end
+  resources :employees
+  resources :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

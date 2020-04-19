@@ -6,6 +6,7 @@ class CreateEducations < ActiveRecord::Migration[5.2]
       t.date :joining_date
       t.date :completion_date
       t.float :aggregate
+      t.references :educateable, polymorphic: true
 
       t.timestamps
     end

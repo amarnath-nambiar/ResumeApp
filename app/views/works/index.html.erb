@@ -16,7 +16,7 @@
   <tbody>
     <% @works.each do |work| %>
       <tr>
-        <td><%= work.company %></td>
+        <td><%= work.employee.first_name %></td>
         <td><%= work.role %></td>
         <td><%= work.join_date %></td>
         <td><%= work.completion_date %></td>

@@ -24,11 +24,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    # @user = User.new(user_params)
+    if user_params[:type] == "Employee"
+      @user = Employee.new(user_params)
+    elsif user_params[:type] == "Student"
+      @user = Student.new(user_params)
+    end
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -59,6 +64,12 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def generate_resume
+    @user = User.find(params[:id])
+    @resume_hash = GenerateResume.new(@user)
+    render json: {}
   end
 
   private

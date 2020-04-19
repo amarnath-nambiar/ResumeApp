@@ -69,6 +69,6 @@ class EducationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def education_params
-      params.require(:education).permit(:college, :course, :join_date, :completion_date, :aggregate)
+      params.require(:education).permit(:college, :course, :joining_date, :completion_date, :aggregate)
     end
 end

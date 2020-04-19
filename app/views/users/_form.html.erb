@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :type %>
-    <%= form.text_field :type %>
+    <%= form.select(:type, [['Fresher', 'Student'],['Proffessional','Employee']]) %>
   </div>
 
   <div class="actions">

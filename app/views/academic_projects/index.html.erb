@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Academic Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Role</th>
+      <th>Student</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @academic_projects.each do |academic_project| %>
+      <tr>
+        <td><%= academic_project.title %></td>
+        <td><%= academic_project.description %></td>
+        <td><%= academic_project.role %></td>
+        <td><%= academic_project.student %></td>
+        <td><%= link_to 'Show', academic_project %></td>
+        <td><%= link_to 'Edit', edit_academic_project_path(academic_project) %></td>
+        <td><%= link_to 'Destroy', academic_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Academic Project', new_academic_project_path %>

@@ -1,0 +1,2 @@
+module AcademicProjectsHelper
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @academic_project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @academic_project.description %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @academic_project.role %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @academic_project.student %>
+</p>
+
+<%= link_to 'Edit', edit_academic_project_path(@academic_project) %> |
+<%= link_to 'Back', academic_projects_path %>

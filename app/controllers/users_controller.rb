@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   require 'ResumeFactory/generate_employee_resume'
+  require 'ResumeFactory/generate_student_resume'
   require 'ResumeFactory/resume_builder'
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @educations = @user.educations
+    @academic_projects = @user.academic_projects  if @user.is_a? Student
     @works  = @user.works if @user.is_a? Employee
   end
 
